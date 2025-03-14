@@ -1,0 +1,9 @@
+<function>
+    <prototype>
+        <!-- General settings -->
+        <proto-section section="general_settings">
+            <!-- Crawler Plug-in class -->
+            <declare type="string" name="crawler_plugin_class" hidden="true" initial-value="com.ibm.es.ama.plugin.sample.SampleCrawlerPlugin" />
+        </proto-section>
+    </prototype>
+</function>

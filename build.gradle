@@ -1,0 +1,30 @@
+
+plugins {
+  id 'java'
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly fileTree('lib'){
+    include '*.jar'
+  }
+
+  implementation 'commons-io:commons-io:2.15.0'
+  implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+}
+
+task packageCrawlerPlugin(type: Zip, dependsOn: jar) {
+  into ('config') {
+    from 'config'
+  }
+
+  into ('lib') {
+    from jar
+    from configurations.runtimeClasspath
+  }
+}
+
